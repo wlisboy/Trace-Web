@@ -26,6 +26,12 @@ Trace-Web 是一个基于 Go 开发的 Cloudflare IP 线路匹配与在线优选
 
 `netsh advfirewall firewall add rule name="All ICMP v6" dir=in action=allow protocol=icmpv6:any,any` # PowerShell / CMD 管理员运行
 
+## 注意事项
+
+**线路匹配** 单次上限 **65536** 个地址
+
+**在线优选** 单次上限 **100000** 个地址
+
 ## 项目结构
 
 ```
