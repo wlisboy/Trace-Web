@@ -36,7 +36,7 @@ netsh advfirewall firewall add rule name="All ICMP v6" dir=in action=allow proto
 
 - 线路匹配 
  
- 单次上限 **100** 个地址/小时
+ 单次上限 **100** 个地址
 
 - 在线优选
  
