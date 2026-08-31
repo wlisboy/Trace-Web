@@ -3,7 +3,7 @@ Trace-Web 是一个基于 Go 开发的 Cloudflare IP 线路探测与在线优选
 
 <img src="img.png">
 
-## 运行参数
+## CLI 参数说明
 
 | 参数 | 默认值 | 说明 |
 | :------ | :------: | :------|
@@ -16,11 +16,21 @@ Trace-Web 是一个基于 Go 开发的 Cloudflare IP 线路探测与在线优选
 | `-r` / `--route` | `15` | 线路匹配并发 workers |
 | `-mh` / `--max-hops` | `12` | 最大跳数（失败重试阶段自动放宽至 25） |
 
-## 参数说明
+## Web 部分参数说明
 
 `子网精简` 
 - IPv4 地址固定按 `/24` 分组，IPv6 地址固定按 `/48` 分组,
 - 每个分组只选取一个代表地址做探测、可用时保留整组，不可用时淘汰整组
+
+`筛选`
+- 文本列 (除丢包率、网络延迟、下载速度列)
+  - 直接搜关键字（模糊匹配），多个词用逗号隔开表示“或
+  - `!` = 排除
+  - `=` = 精确匹配
+
+- 数字列 (丢包率、网络延迟、下载速度列)
+  - 运算符号查询: >|<|>=|<=|=|+数字，例如: >10 | <20 | >=10 | <=20 | =10 | =20
+  - 区间查询: 10-20 等价于 10<=x<=20
 
 ## 注意事项
 
@@ -46,7 +56,7 @@ netsh advfirewall firewall add rule name="All ICMP v6" dir=in action=allow proto
 
 ```
 ├── tracev2.exe              # CLI 
-├── trace_webv2.exe          # Web 端
+├── trace_webv2.exe          # Web
 └── data/
     ├── locations.json         # 白嫖哥 → Cloudflare 数据中心位置
     └── GeoLite2-ASN.mmdb      # MaxMind → ASN 数据库
