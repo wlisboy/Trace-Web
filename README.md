@@ -1,7 +1,7 @@
 # Trace-Web
 Trace-Web 是一个基于 Go 开发的 Cloudflare IP 线路探测与在线优选工具
 
-<img src="img.png">
+![img.png](https://images.580609.ccwu.cc/file/Trace-Web/1788157579355_img.webp)
 
 ## CLI 参数说明
 
@@ -16,7 +16,7 @@ Trace-Web 是一个基于 Go 开发的 Cloudflare IP 线路探测与在线优选
 | `-r` / `--route` | `15` | 线路匹配并发 workers |
 | `-mh` / `--max-hops` | `12` | 最大跳数（失败重试阶段自动放宽至 25） |
 
-## Web 部分参数说明
+## Web 界面部分功能说明
 
 `子网精简` 
 - IPv4 地址固定按 `/24` 分组，IPv6 地址固定按 `/48` 分组,
