@@ -59,7 +59,7 @@ example.com:443          # 域名
 
 > **Note**： 模式专属参数不能混用 `-u` / `-f` / `-d` 只用于在线优选，`-r` / `-mh` 只用于线路探测
 
-### Windows: 普通用户模式（ICMP）需放行防火墙：
+### Windows 普通用户模式（ICMP）需放行防火墙：
 
 ```bat
 netsh advfirewall firewall add rule name="All ICMP v4" dir=in action=allow protocol=icmpv4:any,any
